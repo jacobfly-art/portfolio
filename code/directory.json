@@ -1,0 +1,374 @@
+{
+    "restricted_downloads": [
+        "Thirteen Roses",
+        "The Art Of Everyday Life"
+    ],
+    "categories": [
+        "resume",
+        "updates",
+        "plays",
+        "specs",
+        "jokes",
+        "philosophy",
+        "comedy-theory",
+        "happiness",
+        "projects",
+        "tutoring",
+        "writing",
+        "comedy",
+        "adulting101",
+        "playwright",
+        "essayist",
+        "educator"
+    ],
+    "dates": {
+        "Thirteen Roses": "May 1, 2024",
+        "The Art Of Everyday Life": "March 29, 2025",
+        "Young Sheldon": "December 31, 2023",
+        "Whiteboard Sketch": "",
+        "Betas Sketch": "",
+        "Earth Day Sketch": "",
+        "Excerpt from First Full Length Play": "February 2, 2019",
+        "Analysis Of The Silence": "",
+        "The Universality Of Language": "",
+        "On Ferris Bueller's Day Off": "",
+        "The Function Of The Encephalon": "December 10, 2025",
+        "The Physiology Of Euphoria": "July 24, 2025",
+        "The Pursuit Of Happiness As First Philosophy Preface": "July 4, 2025",
+        "On A Bananaed Floor": "",
+        "Outlining Technique": "",
+        "The MLA Formula Sheet": "",
+        "Brainstorming Techniques": "",
+        "Fake Ad Writing": "",
+        "Fake Ad Analysis": "",
+        "Comedy Intro Presentation": "",
+        "Ensemble Methods Presentation": "",
+        "Supervised Learning Project": "",
+        "Decision Tree Project": "",
+        "Unsupervised Learning Presentation": "",
+        "Intro To SQL ": "",
+        "Python Fundamentals Project": "",
+        "Business Statistics Presentation": "",
+        "Intro To SQL": "",
+        "plagiarism": ""
+    },
+    "summaries left to write": {},
+    "portfolio": {
+        "resume": [],
+        "updates": [],
+        "plays": [
+            "Thirteen Roses",
+            "The Art Of Everyday Life"
+        ],
+        "specs": [
+            "Young Sheldon"
+        ],
+        "jokes": [
+            "Whiteboard Sketch",
+            "Betas Sketch",
+            "Earth Day Sketch",
+            "Excerpt from First Full Length Play"
+        ],
+        "philosophy": [
+            "Analysis Of The Silence",
+            "The Universality Of Language"
+        ],
+        "comedy-theory": [
+            "On Ferris Bueller's Day Off"
+        ],
+        "happiness": [
+            "The Function Of The Encephalon",
+            "The Physiology Of Euphoria",
+            "The Pursuit Of Happiness As First Philosophy Preface"
+        ],
+        "projects": [
+            "Python Fundamentals Project",
+            "Business Statistics Presentation",
+            "Supervised Learning Project",
+            "Decision Tree Project",
+            "Ensemble Methods Presentation",
+            "Unsupervised Learning Presentation",
+            "Intro To SQL"
+        ],
+        "tutoring": [],
+        "writing": [
+            "plagiarism",
+            "On A Bananaed Floor",
+            "Outlining Technique",
+            "The MLA Formula Sheet",
+            "Brainstorming Techniques"
+        ],
+        "comedy": [
+            "Fake Ad Writing",
+            "Fake Ad Analysis",
+            "Comedy Intro Presentation"
+        ],
+        "adulting101": [],
+        "playwright": [],
+        "essayist": [],
+        "educator": []
+    },
+    "profiles": {
+        "biography": {
+            "title": "Biography",
+            "subtitle": "Playwright, Essayist, Educator, Data Analyst",
+            "headshots": [
+                "/biography/profile.jpeg"
+            ],
+            "fun_facts": [
+                {
+                    "title": "Deeply Inspired",
+                    "subtitle": "As A Data Scientist",
+                    "bullets": [
+                        "I believe that data science has the power to reduce the amount of labor required for people to afford their needs.",
+                        "I'm ready to invest myself into a career serving customers in the best way I can with my life."
+                    ]
+                },
+                {
+                    "title": "Fun Loving",
+                    "subtitle": "As Well As Professional",
+                    "bullets": [
+                        "I played Tennis in college, but my friends tend to prefer going to Top Golf.",
+                        "Connecting with collegues over lunch and some laughs is my favorite leisure activity."
+                    ]
+                },
+                {
+                    "title": "Romantic Comedy Writer",
+                    "subtitle": "On The Side",
+                    "bullets": [
+                        "Even though they can be pretty cheesy, the type of comedies I love are shows like How I Met Your Mother, The Office, and The Big Bang Theory.",
+                        "I've learned so much about consumer behavior from studying how to write for TV.",
+                        "\"There's nothing that sells stuff like television. Nothing.\" -Lorne Michaels"
+                    ]
+                }
+            ],
+            "personality": [
+                {
+                    "title": "Funny",
+                    "description": "I love comedy and sold a play last year. I see comedy as a means to friendship and to creating inclusive work environments."
+                },
+                {
+                    "title": "Energetic",
+                    "description": "I'm the type of person who makes people wonder how I do it all. This year alone, I had my play produced, I had my essays reviewed by UTSA's Philosophy professors (this old boy's still got it), and I commited myself to a career in Data Analytics."
+                }
+            ],
+            "timeline": [
+                {
+                    "tag": "Motivated",
+                    "title": "Declared my Majors",
+                    "date": "January 2019",
+                    "description": "Met with professors during office hours and discovered the depth of my passion for diagnosing large-scale systemic issues, leading me to explore those ambitions before reconsidering a career as a physician.",
+                    "image": "../gallery/swu.jpeg"
+                },
+                {
+                    "title": "Graduated high school in Boerne, TX",
+                    "date": "May 2019",
+                    "description": "Grew up as a band nerd in the Baritone section and member of my youth group."
+                },
+                {
+                    "tag": "Analytical",
+                    "title": "Interned at Methodist Emergency Room in Boerne for a year",
+                    "date": "May 2017",
+                    "description": "Discovered my passion for helping people, quick paced problem-solving, and analytical thinking through my high school's pre-med track and internship.",
+                    "image": "../gallery/methodist.jpeg"
+                }
+            ]
+        },
+        "data-scientist": {
+            "title": "Data Scientist",
+            "resume_pdf": "/biography/Harper_Fly_Data_Resume.pdf",
+            "bio_text": "I'm Harper\u2014a multidisciplinary creator bridging the worlds of narrative structure, quantitative analysis, and education. As a professional data scientist and creative writer, my intellectual and creative passions are fulfilled by the books and goals that I come home to each night, and I am excited by having a career that will allow me to come home to those passions each night for the rest of my life.",
+            "timeline": [
+                {
+                    "tag": "Skilled",
+                    "title": "UT Data Science and Business Analytics Post-Grad",
+                    "date": "March 2026",
+                    "description": "Engaged in weekly discussions with professor to acquired high-level proficiencies in Python, Machine Learning, and Tableau, learning to directly apply predictive modeling to core business challenges.",
+                    "image": "../gallery/ut-austin.jpeg"
+                },
+                {
+                    "tag": "Proactive",
+                    "title": "Led A New Initative at Northwest Vista College",
+                    "date": "October 2025",
+                    "description": "Performed data analysis on the student population, studied time management and organization strategies, and developed digital media to promote the program.",
+                    "image": "../gallery/nvc.jpeg"
+                },
+                {
+                    "tag": "Analytical",
+                    "title": "Completed a 300 page rough draft of my analytical philosophy",
+                    "date": "February 2025",
+                    "description": "After reading all the books recommended to me by professors, I was able to organize my thoughts on how brains search for the essence of happiness. That's when I realized the good that data analysis could do for the world to help people find what they are searching for.",
+                    "image": "../gallery/philosophy.jpeg"
+                },
+                {
+                    "tag": "Skilled",
+                    "title": "Earned a Bachelors in Physics from Southwestern University",
+                    "date": "May 2022",
+                    "description": "Primarily studied the physical science's most advanced mathematical methods that the department's course catalog had to offer with a particular interest in Advanced Fourier Series Transforms and their applications to methods of artificial transcription and intelligence.",
+                    "image": "../gallery/swu-physics.jpeg"
+                },
+                {
+                    "tag": "Skilled",
+                    "title": "Worked as a Data Analyist at Southwestern University",
+                    "date": "Summer 2019",
+                    "description": "Applied analytical skills in a professional university setting, managing data sets and extracting foundational insights from weather ballon data from across Texas.",
+                    "image": "../gallery/swu-data.jpeg"
+                }
+            ],
+            "skills": [
+                {
+                    "title": "Python",
+                    "subtitle": "Supervised Learning, Ensemble Methods, Unsupervised Learning",
+                    "description": "Alongside my certificates from IBM, Google, and Meta, I applied my knowledge in discussions with my professor and through my projects at UT."
+                },
+                {
+                    "title": "Data Management",
+                    "subtitle": "SQL & Web Scraping",
+                    "description": "As part of the program at UT, I learned SQL and was inspired to get a certificate from IBM to explore the full potential of what I could do with Data Analytics and data scraped from the internet."
+                }
+            ]
+        },
+        "playwright": {
+            "title": "Playwright",
+            "resume_pdf": "/biography/Harper_Fly_Playwright_Resume.pdf",
+            "timeline": [
+                {
+                    "tag": "Proactive",
+                    "title": "Watched the team I served perform my play",
+                    "date": "May 2025",
+                    "description": "Wrote, sold, and guided actors and directors in the production of my original play by The Overtime Theater in San Antonio for a four-weekend run.",
+                    "image": "../gallery/overtime.jpeg"
+                },
+                {
+                    "tag": "Motivated",
+                    "title": "Submitted my final draft of Thirteen Roses to The Overtime Theater",
+                    "date": "June 2024",
+                    "description": "After a year of serious commitment to creative exploration and major life decisions, I finished my best play yet.",
+                    "image": "../gallery/thirteen-roses.jpeg"
+                },
+                {
+                    "tag": "Motivated",
+                    "title": "Spent a year volunteering at The Boerne Community Theatre",
+                    "date": "July 2023",
+                    "description": "Became a member of the theater community in my hometown while I embarked on a journey of self-discovery.",
+                    "image": "../gallery/boerne.jpeg"
+                },
+                {
+                    "tag": "Motivated",
+                    "title": "Studied The Dramatic Arts at Northwest Vista College",
+                    "date": "Fall 2022",
+                    "description": "Took a semester to explore one of my passions at a more affordable school with a nevertheless well-funded Fine Arts facilities and to study under the best director in San Antonio.",
+                    "image": "../gallery/nvc-arts.jpeg"
+                },
+                {
+                    "tag": "Proactive",
+                    "title": "Organized Playwriting Festival",
+                    "date": "April 2022",
+                    "description": "Coordinated, wrote for, and performed in a playwriting festival for new works at Southwestern University.",
+                    "image": "../gallery/festival.jpeg"
+                },
+                {
+                    "tag": "Motivated",
+                    "title": "Won the King Creativity Grant and produced short films",
+                    "date": "May 2021",
+                    "description": "Pitched and wrote 5 science fiction short films, \"The Imaginary Horizon Series,\" and came up with a budget and documented strategy for how to produce said films.",
+                    "image": "../gallery/grant.jpeg"
+                },
+                {
+                    "tag": "Motivated",
+                    "title": "Studied Film and Acting as well as Differential Equations at Northwest Vista College",
+                    "date": "May 2021",
+                    "description": "While waiting for the COVID-19 pandemic to end and for Classical Mechanics to be offered once more, I took advantage of some cheap tuition and made some friends along the way.",
+                    "image": "../gallery/nvc-film.jpeg"
+                }
+            ],
+            "skills": [
+                {
+                    "title": "Digital Media Production",
+                    "subtitle": "Final Cut, Canva, Logic",
+                    "description": "Through my film courses at Northwest Vista College, Southwestern University, and NYU, I became familiar with how to create digital content for posts, flyers, and films."
+                }
+            ]
+        },
+        "educator": {
+            "title": "Educator",
+            "resume_pdf": "/biography/Harper_Fly_Educator_Resume.pdf",
+            "timeline": [
+                {
+                    "tag": "Proactive",
+                    "title": "Became a member of Staff Senate at Northwest Vista College",
+                    "date": "June 2025",
+                    "description": "Assumed a leadership position by representing the interests of my fellow staff members to the senate.",
+                    "image": "../gallery/senate.jpeg"
+                },
+                {
+                    "tag": "Analytical",
+                    "title": "Created a series of workshops on the logic of Comedies at Northwest Vista College",
+                    "date": "August 2024",
+                    "description": "I put together interactive activities, slideshows, and informative handouts to help students think about comedy analytically and to serve some function.",
+                    "image": "../gallery/workshops.jpeg"
+                },
+                {
+                    "tag": "Skilled",
+                    "title": "Started working as a writing tutor at Northwest Vista College",
+                    "date": "May 2021",
+                    "description": "Honed expert-level communication skills, mastering the ability to explain complex, structural concepts to diverse audiences clearly and effectively.",
+                    "image": "../gallery/tutor.jpeg"
+                },
+                {
+                    "tag": "Analytical",
+                    "title": "Started work as a physics tutor at Southwestern University",
+                    "date": "May 2018",
+                    "description": "Guided university students through high-level scientific and mathematical frameworks, reinforcing my own quantitative expertise.",
+                    "image": "../gallery/physics-tutor.jpeg"
+                },
+                {
+                    "tag": "Proactive",
+                    "title": "Started a high school quidditch team",
+                    "date": "September 2014",
+                    "description": "From the very beginning, I have been a fun-loving leader, getting together a group of 20 students to watch and play a game of quidditch together and corrdinating a match with another school.",
+                    "image": "../gallery/quidditch.jpeg"
+                }
+            ],
+            "skills": [
+                {
+                    "title": "Productivity Suites",
+                    "subtitle": "Google, Microsoft, Apple",
+                    "description": "As a professional writing tutor and student who can handle a heavy courseload, I am very familiar with all of the word prcessors, spreadsheets, and slide decks."
+                },
+                {
+                    "title": "Web Development",
+                    "subtitle": "HTML, CSS, JavaScript",
+                    "description": "As a personal passion and subscriber to Coursera with certificates from IBM, Google, and Meta, I create websites with ease and have begun learning how to build my own apps."
+                }
+            ]
+        },
+        "essayist": {
+            "title": "Essayist",
+            "resume_pdf": "/biography/Harper_Fly_Essayist_Resume.pdf",
+            "timeline": [
+                {
+                    "tag": "Motivated",
+                    "title": "Studied Senior Seminar Contemporary Philosophy at UTSA",
+                    "date": "Fall of 2025",
+                    "description": "Took contemporary analytical philosophy course as well as a contemporary continental philosophy course to see how well I understand and how my way of thinking compares to that of the contemporary.",
+                    "image": "../gallery/utsa.jpeg"
+                },
+                {
+                    "tag": "Analytical",
+                    "title": "Earned a Bachelors in Philosophy from Southwestern University",
+                    "date": "December 2020",
+                    "description": "Wrote a capstone on the value of the liberal arts education in a nominally democratic nation where students can take it upon themselves to read, write, and use mathematics as life-long learners.",
+                    "image": "../gallery/swu-philosophy.jpeg"
+                }
+            ],
+            "skills": [
+                {
+                    "title": "Technical Writing",
+                    "subtitle": "Grammar, Scientific, Stylized",
+                    "description": "I developed a mastery of how to perform technical writing as a Professional Writing Tutor at Northwest Vista College, as a liberal arts student, and as a paid freelance technical editor for graduate students completing their dissertations."
+                }
+            ]
+        }
+    }
+}

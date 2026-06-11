@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harper Fly - Biography</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .bio-pitch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin: 3rem auto 4rem auto;
+            max-width: 1000px;
+            padding: 3rem;
+            background-color: var(--color-bg-primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .bio-pitch-text { flex: 1; }
+        .bio-pitch-text h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-main);
+        }
+        .bio-pitch-text h3 {
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .bio-pitch-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+        }
+        .bio-pitch-image-container { flex-shrink: 0; }
+        .bio-pitch-image-container img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Filter Buttons */
+        .filter-container {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .filter-btn {
+            background-color: var(--color-bg-secondary);
+            color: var(--color-text-main);
+            border: 1px solid var(--color-accent);
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--color-accent-dark);
+            color: #FFFFFF;
+        }
+
+        /* Timeline Flip Cards */
+        .timeline-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .timeline-card-wrapper {
+            flex: 0 1 300px;
+            transition: opacity 0.4s ease;
+        }
+        .flip-card {
+            background-color: transparent;
+            height: 320px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back { 
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            border: 1px solid var(--color-accent);
+        }
+        .flip-card-front {
+            background-color: var(--color-bg-primary);
+        }
+        .flip-card-front img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 2px;
+            margin-bottom: 15px;
+        }
+        .flip-card-front h3 {
+            font-family: var(--font-serif);
+            color: var(--color-text-main);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .flip-card-front .date {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+        }
+        .flip-card-back {
+            background-color: var(--color-bg-secondary);
+            transform: rotateY(180deg);
+        }
+        .flip-card-back p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--color-text-muted);
+        }
+
+        /* Sharp Bottom Section */
+        .sharp-section {
+            background-color: var(--color-bg-secondary);
+            padding: 5rem 2rem;
+            margin-top: 5rem;
+        }
+        .sharp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .sharp-card {
+            background-color: var(--color-bg-primary);
+            padding: 2.5rem;
+            border-left: 4px solid var(--color-accent-dark);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+        }
+        .sharp-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .sharp-card p.subtitle {
+            color: var(--color-accent);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+        .sharp-card ul {
+            padding-left: 1rem;
+            color: var(--color-text-muted);
+        }
+        .sharp-card ul li { margin-bottom: 10px; }
+
+        @media (max-width: 768px) {
+            .bio-pitch-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 2rem;
+            }
+            .filter-btn { margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar-container"></div>
+
+    <section>
+        <div class="bio-pitch-container">
+            <div class="bio-pitch-text">
+                <h1>Harper Fly</h1>
+                <h3>Writer</h3>
+                <p>I am a comedic playwright, philosophy and educator who understands the rigorous demands of collaborative storytelling. My dedication to the craft extends to actively honing my comedic voice—whether I am analyzing the structural mechanics of television comedy, completing intensive beginner comedy workshops, or organizing a collegiate playwriting festival. I bring a deeply analytical yet endlessly creative approach to ensure every joke lands and every scene drives the narrative forward.</p>
+            </div>
+            <div class="bio-pitch-image-container">
+                <img src="../biography/profile.jpeg" alt="Harper Fly Profile Picture">
+            </div>
+        </div>
+    </section>
+
+    <div class="timeline-section">
+        <h2 style="text-align: center; margin-bottom: 1rem;">Experience Timeline</h2>
+        <p class="timeline-instructions" style="text-align: center; margin-bottom: 2rem; color: var(--color-text-muted);">
+            Use the buttons below to filter my experience, and click on any photo card to reveal more details.
+        </p>
+        
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterTimeline('all', this)">Show All</button>
+            <button class="filter-btn" onclick="filterTimeline('skilled', this)">Skilled</button>
+            <button class="filter-btn" onclick="filterTimeline('motivated', this)">Motivated</button>
+            <button class="filter-btn" onclick="filterTimeline('proactive', this)">Proactive</button>
+            <button class="filter-btn" onclick="filterTimeline('analytical', this)">Analytical</button>
+        </div>
+
+        <div class="timeline-grid" id="timeline-grid">
+            
+            <!-- SKILLED -->
+            <div class="timeline-card-wrapper" data-tag="skilled">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/UT Post-Grad Data Science Certificate.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>UT Data Science Post-Grad</h3>
+                            <span class="date">March 2026</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Engaged in weekly discussions with professor to acquire high-level proficiencies in Python, Machine Learning, and Tableau, learning to directly apply predictive modeling to core business challenges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="skilled">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/tutor.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Writing Tutor at NVC</h3>
+                            <span class="date">May 2021</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Honed expert-level communication skills, mastering the ability to explain complex, structural concepts to diverse audiences clearly and effectively.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="skilled">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/swu physics.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Bachelors in Physics</h3>
+                            <span class="date">May 2022</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Primarily studied the physical science's most advanced mathematical methods with a particular interest in Advanced Fourier Series Transforms and their applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOTIVATED -->
+            <div class="timeline-card-wrapper" data-tag="motivated">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/thirteen-roses.jpg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Submitted Thirteen Roses</h3>
+                            <span class="date">June 2024</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>After a year of serious commitment to creative exploration and major life decisions, I finished my best play yet and submitted it to The Overtime Theater.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="motivated">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/utsa.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Senior Seminar Philosophy</h3>
+                            <span class="date">Fall 2025</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Took contemporary analytical philosophy course as well as a contemporary continental philosophy course to see how well I understand contemporary thought.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="motivated">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/bct.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Boerne Community Theatre</h3>
+                            <span class="date">July 2023</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Became a member of the theater community in my hometown while I embarked on a journey of self-discovery.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROACTIVE -->
+            <div class="timeline-card-wrapper" data-tag="proactive">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/playwriting.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Produced Original Play</h3>
+                            <span class="date">May 2025</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Wrote, sold, and guided actors and directors in the production of my original play by The Overtime Theater in San Antonio for a four-weekend run.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="proactive">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/festival.jpg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Organized Playwriting Fest & Won King Creativity Grant</h3>
+                            <span class="date">April 2022</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Coordinated, wrote for, and performed in a playwriting festival for new works and the production of 4 short films at Southwestern University.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="proactive">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/nvc.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Led NVC Initiative</h3>
+                            <span class="date">October 2025</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Performed data analysis on the student population, studied time management and organization strategies, and developed digital media to promote the program.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ANALYTICAL -->
+            <div class="timeline-card-wrapper" data-tag="analytical">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/philosophy.jpg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Philosophy Draft</h3>
+                            <span class="date">February 2025</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Organized my thoughts on how brains search for the essence of happiness, leading me to realize the good data analysis could do for the world.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="analytical">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/workshops.jpeg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Workshops on Comedy Logic</h3>
+                            <span class="date">August 2024</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Put together interactive activities, slideshows, and informative handouts to help students think about comedy analytically and to serve some function.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-card-wrapper" data-tag="analytical">
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="../biography/swu-philosophy.jpg" onerror="this.src='/biography/profile.jpeg'" alt="Event Photo">
+                            <h3>Bachelors in Philosophy</h3>
+                            <span class="date">December 2020</span>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Wrote a capstone on the value of the liberal arts education in a nominally democratic nation where students are life-long learners.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="sharp-section">
+        <h2 style="text-align: center; margin-bottom: 3rem;">Fun Facts & Personality</h2>
+        <div class="sharp-grid">
+            
+            <div class="sharp-card">
+                <h3>Romantic Comedy Writer</h3>
+                <p class="subtitle">On The Side</p>
+                <ul>
+                    <li>Even though they can be pretty cheesy, the type of comedies I love are shows like How I Met Your Mother, The Office, and The Big Bang Theory.</li>
+                    <li>I've learned so much about consumer behavior from studying how to write for TV.</li>
+                    <li>"There's nothing that sells stuff like television. Nothing." <i>-Lorne Michaels</i></li>
+                </ul>
+            </div>
+
+            <div class="sharp-card">
+                <h3>Funny</h3>
+                <p class="subtitle">Community Builder</p>
+                <p style="color: var(--color-text-muted);">I love comedy and sold a play last year. I see comedy as a means to friendship and to creating inclusive work environments.</p>
+            </div>
+
+            <div class="sharp-card">
+                <h3>Energetic</h3>
+                <p class="subtitle">Driven Creator</p>
+                <p style="color: var(--color-text-muted);">I'm the type of person who makes people wonder how I do it all. This year alone, I had my play produced, I had my essays reviewed by UTSA's Philosophy professors, and I committed myself to a career in Data Analytics.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="contact-bar"></div>
+    <script src="main.js"></script>
+
+    <script>
+        function filterTimeline(tag, buttonElement) {
+            // Update active button styling
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttonElement.classList.add('active');
+
+            // Filter the cards
+            const cards = document.querySelectorAll('.timeline-card-wrapper');
+            cards.forEach(card => {
+                if (tag === 'all' || card.getAttribute('data-tag') === tag) {
+                    card.style.display = 'block';
+                    // Small timeout to allow display:block to apply before fading in
+                    setTimeout(() => { card.style.opacity = '1'; }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    // Wait for fade out transition before removing from flow
+                    setTimeout(() => { card.style.display = 'none'; }, 400);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

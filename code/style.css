@@ -1,0 +1,293 @@
+/* =========================================
+   1. CONTROL CENTER (VARIABLES)
+   ========================================= */
+:root {
+    /* Change these 6 hex codes to alter the entire website's theme */
+    --color-bg-primary: #FCFBFA;     /* Crisp, warm white for main backgrounds */
+    --color-bg-secondary: #F4F1EA;   /* Elegant eggshell/beige for alternating sections */
+    --color-text-main: #1A1816;      /* Deep, rich espresso (softer on the eyes than pure black) */
+    --color-text-muted: #6B6259;     /* Medium taupe for secondary text and dates */
+    --color-accent: #A69076;         /* Warm tan for subtle highlights and borders */
+    --color-accent-dark: #3E332A;    /* Dark brown for buttons and hover states */
+    
+    /* Typography settings */
+    --font-ui: 'Helvetica Neue', Courier;
+    --font-serif: 'Georgia', 'Times New Roman';
+}
+
+/* =========================================
+   2. BASE STYLES & TYPOGRAPHY
+   ========================================= */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-ui);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 { 
+    color: var(--color-text-main); 
+    margin-top: 0; 
+}
+
+a { 
+    color: var(--color-accent-dark); 
+    text-decoration: none; 
+    transition: color 0.3s ease;
+}
+
+a:hover { color: var(--color-accent); }
+
+section {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
+#navbar-container {
+    background-image: linear-gradient(rgba(26, 24, 22, 0.5), rgba(26, 24, 22, 0.7)), url("../banners/nav.jpg");
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 2rem;
+}
+
+header#top { text-align: center; padding: 3rem 1rem 1rem; }
+header#top h1 { font-family: var(--font-serif); font-size: 2.5rem; color: #FFFFFF; font-weight: normal; letter-spacing: 2px; margin-bottom: 0.5rem; }
+header#top a, .contact-info p { color: #FFFFFF; }
+.contact-info a:hover { text-decoration: underline; }
+
+nav.main-nav { width: 100%; }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+
+nav.main-nav ul li a {
+    display: block;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+nav.main-nav ul li a:hover {
+    background-color: #FFFFFF;
+    color: var(--color-text-main);
+}
+
+/* Dropdowns */
+.main-nav ul li.dropdown { position: relative; }
+.main-nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0;
+    background-color: var(--color-text-main);
+    min-width: 250px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+.main-nav ul li .dropdown-content a {
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    color: #FFFFFF;
+    text-transform: none;
+    letter-spacing: normal;
+}
+.main-nav ul li .dropdown-content li:last-child a { border-bottom: none; }
+.main-nav ul li .dropdown-content a:hover { background-color: var(--color-accent-dark); color: #FFFFFF; }
+.main-nav ul li.dropdown:hover .dropdown-content { display: block; }
+
+/* Contact Bar Bottom */
+.contact-bar {
+    background-color: var(--color-text-main);
+    color: var(--color-bg-secondary);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+.contact-bar a { color: var(--color-bg-secondary); margin: 0 10px; }
+
+/* =========================================
+   4. INTRO & BANNERS
+   ========================================= */
+.intro {
+    background-color: var(--color-bg-secondary);
+    text-align: center;
+    padding: 6rem 2rem;
+}
+.intro h1 { font-family: var(--font-serif); font-size: 3rem; font-weight: normal; color: var(--color-text-main); }
+.intro p { font-family: var(--font-serif); font-size: 1.25rem; color: var(--color-text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8; }
+
+.role-card { position: relative; display: block; width: 100%; height: 50vh; overflow: hidden; }
+.background-image { width: 100%; height: 100%; object-fit: cover; filter: brightness(55%); transition: transform 0.6s ease; }
+.overlay-text {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    color: #FFFFFF; font-size: 2.5rem; font-weight: normal; letter-spacing: 6px;
+    transition: transform 0.4s ease; text-align: center;
+}
+.role-card:hover .background-image { transform: scale(1.03); filter: brightness(40%); }
+.role-card:hover .overlay-text { transform: translate(-50%, -50%) scale(1.1); }
+
+/* =========================================
+   5. PORTFOLIO ITEMS (PLAYS & PROJECTS)
+   ========================================= */
+.play-item {
+    display: flex; flex-direction: column; gap: 3rem; margin-bottom: 5rem;
+    background: var(--color-bg-primary);
+}
+.play-image-link { flex: 1; max-width: 350px; transition: transform 0.3s ease; }
+.play-image-link:hover { transform: translateY(-5px); }
+.play-image { width: 100%; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-radius: 2px; }
+
+.play-details { flex: 1.5; display: flex; flex-direction: column; justify-content: center; }
+.play-details h2 { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.5rem; }
+.play-details h3 { color: var(--color-text-muted); font-size: 1rem; font-weight: normal; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem; }
+.play-description { color: var(--color-text-muted); font-size: 1.1rem; line-height: 1.7; white-space: pre-wrap; }
+
+/* =========================================
+   6. RESUME & TIMELINE
+   ========================================= */
+.bio-container { display: flex; flex-direction: column; align-items: center; gap: 3rem; margin-bottom: 4rem; }
+.bio-image { width: 250px; height: 250px; border-radius: 50%; object-fit: cover; filter: grayscale(20%); }
+
+.timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.timeline-instructions { text-align: center; color: var(--color-text-muted); margin-bottom: 2rem; }
+
+.flip-card { background-color: transparent; height: 280px; perspective: 1000px; cursor: pointer; }
+.flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s ease; transform-style: preserve-3d; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front, .flip-card-back { 
+    position: absolute; width: 100%; height: 100%; backface-visibility: hidden; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; 
+    padding: 2rem; box-sizing: border-box; 
+}
+.flip-card-front { background-color: var(--color-bg-primary); border: 1px solid var(--color-accent); }
+.flip-card-front h3 { font-family: var(--font-serif); color: var(--color-text-main); margin-bottom: 10px; font-size: 1.4rem; }
+.flip-card-front .date { font-size: 0.85rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+.flip-card-back { background-color: var(--color-bg-secondary); color: var(--color-text-main); transform: rotateY(180deg); border: 1px solid var(--color-accent); }
+.flip-card-back p { margin: 0; font-size: 1rem; line-height: 1.6; color: var(--color-text-muted); }
+
+/* =========================================
+   7. GALLERY & BUTTONS
+   ========================================= */
+body.gallery-page { background-color: var(--color-bg-secondary); }
+.gallery-container { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 600px; margin: 0 auto; padding: 2rem 0; }
+.paper-jpeg { 
+    width: 100%; 
+    height: auto; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+}
+.download-button {
+    display: inline-block;
+    background-color: var(--color-accent-dark);
+    color: #FFFFFF;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease;
+}
+.download-button:hover { background-color: var(--color-accent); color: #FFFFFF; }
+
+/* =========================================
+   8. RESPONSIVE DESIGN
+   ========================================= */
+@media (min-width: 768px) {
+    .bio-container { flex-direction: row; align-items: flex-start; }
+    .bio-image { flex-shrink: 0; }
+    .play-item { flex-direction: row; align-items: center; }
+    .play-item:nth-child(even) { flex-direction: row-reverse; }
+}
+
+@media (min-width: 900px) {
+    .gallery-container { grid-template-columns: 1fr 1fr; max-width: 1100px; }
+}
+
+@media (max-width: 768px) {
+    .overlay-text { font-size: 1.8rem; letter-spacing: 3px; }
+    .role-card { height: 35vh; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
+    nav ul li { flex: 0 0 auto; }
+}
+
+/*  =========================================
+
+    9. BIO
+
+    ========================================= */
+
+        /* Bio Pitch Layout */
+        .bio-pitch-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+            margin: 3rem auto 4rem auto;
+            max-width: 1000px;
+            padding: 3rem;
+            background-color: var(--color-bg-primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .bio-pitch-text {
+            flex: 1;
+        }
+        .bio-pitch-text h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-main);
+        }
+        .bio-pitch-text h3 {
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .bio-pitch-text p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--color-text-muted);
+        }
+        .bio-pitch-image-container {
+            flex-shrink: 0;
+        }
+        .bio-pitch-image-container img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Center timeline cards by row override */
+        .timeline-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .flip-card {
+            flex: 0 1 300px; /* Allows cards to center while maintaining their 300px width */
+            height: 280px;
+        }
+
+        /* Responsive adjustments for mobile displays */
+        @media (max-width: 768px) {
+            .bio-pitch-container {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 2rem;
+            }
+        }
